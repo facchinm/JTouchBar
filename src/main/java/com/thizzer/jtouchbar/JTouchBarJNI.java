@@ -11,7 +11,6 @@
 package com.thizzer.jtouchbar;
 
 import java.awt.Component;
-import javafx.stage.Window;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,8 +33,6 @@ public class JTouchBarJNI {
 	public static native void updateTouchBarItem(long nativeInstancePointer);
 	
 	public static native void callObjectSelector(long nativeInstancePointer, String selector);
-	
-	public static native long getJavaFXViewPointer0(Window w);
 	
 	public static native long getAWTViewPointer0(Component c);
 	
