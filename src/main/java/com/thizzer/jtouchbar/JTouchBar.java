@@ -11,13 +11,11 @@
 package com.thizzer.jtouchbar;
 
 import java.awt.Component;
-import org.eclipse.swt.widgets.Shell;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.thizzer.jtouchbar.awt.AWTUtils;
-import com.thizzer.jtouchbar.swt.SWTUtils;
 
 import com.thizzer.jtouchbar.item.TouchBarItem;
 
@@ -63,11 +61,6 @@ public class JTouchBar {
 		JTouchBarJNI.setTouchBar0(viewPointer, this);
 	}
 	
-	public void show(Shell shell) {
-		long viewPointer = SWTUtils.getViewPointer(shell);
-		JTouchBarJNI.setTouchBar0(viewPointer, this);
-	}
-	
 	public void show(long window) {
 		JTouchBarJNI.setTouchBar0(window, this);
 	}
@@ -77,14 +70,6 @@ public class JTouchBar {
 			return;
 		}
 		long viewPointer = AWTUtils.getViewPointer(c);
-		JTouchBarJNI.setTouchBar0(viewPointer, null);
-	}
-	
-	public void hide(Shell shell) {
-		if(shell == null) {
-			return;
-		}
-		long viewPointer = SWTUtils.getViewPointer(shell);
 		JTouchBarJNI.setTouchBar0(viewPointer, null);
 	}
 	
